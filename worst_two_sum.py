@@ -8,13 +8,11 @@ class Solution(object):
         # self.nums = nums
         # self.target = target
         for i in range(0, len(nums)):
-            shite_eye = (len(nums) - 1) - i
             a = nums[i]
-            print(shite_eye)
-            sh = nums[shite_eye]
-            guess = a + sh
-            print(guess)
-            if guess == target:
-                out = [i,shite_eye]
-                break
-                return out
+            print(a)
+            for j in range(0, len(nums)):
+                t = nums[j]
+                guess = a + t
+                if (guess == target) and (i != j):
+                    out = [i, j]
+                    return out
